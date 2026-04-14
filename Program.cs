@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Mvc.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 using PracticeModelValidation.Data;
+using PracticeModelValidation.Helpers.CustomValidation;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<PracticeModelValidationContext>(options =>
@@ -7,6 +9,9 @@ builder.Services.AddDbContext<PracticeModelValidationContext>(options =>
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Register your Custom Validation Provider here
+builder.Services.AddSingleton<IValidationAttributeAdapterProvider, AdapterProvider>();
 
 var app = builder.Build();
 
