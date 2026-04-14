@@ -1,4 +1,4 @@
-﻿using PracticeModelValidation.Helpers;
+﻿using PracticeModelValidation.Helpers.CustomValidation;
 using System.ComponentModel.DataAnnotations;
 
 namespace PracticeModelValidation.Models
